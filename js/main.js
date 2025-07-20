@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".card");
   const container = document.getElementById("project-container");
   const mainContent = document.querySelector(".main-content");
+  const navbar = document.querySelector(".navbar");
+  const body = document.body;
 
   cards.forEach((card) => {
     card.addEventListener("click", function () {
@@ -20,6 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <button id="back-button" class="floating-back-btn">&lt;</button>
           `;
 
+          body.classList.add("white-theme");
+          if (navbar) navbar.classList.add("white-theme");
+
           attachBackButtonListener();
         })
         .catch((error) => {
@@ -36,6 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
         container.innerHTML = "";
         container.classList.add("hidden");         
         mainContent.classList.remove("hidden");    
+
+        body.classList.remove("white-theme");
+        if (navbar) navbar.classList.remove("white-theme");
       });
     }
   }
