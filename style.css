@@ -106,6 +106,7 @@ p strong {
   margin: 0 auto;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  object-fit: contain;
 
 }
 
@@ -127,6 +128,37 @@ p strong {
   font-weight: 300;
   padding: 0 10px 10px 10px;
 
+}
+.project-container {
+}
+
+.project-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.project-type {
+  font-size: 0.95rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.project-section {
+  margin-bottom: 2rem;
+}
+
+.project-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 6px;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
 }
 
 footer {
