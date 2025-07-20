@@ -19,7 +19,7 @@ body {
 }
 p b,
 p strong {
-  font-weight: 700; /* or 600 depending on how bold you want */
+  font-weight: 700; 
 }
 /* Base layout */
 .navbar {
@@ -130,6 +130,9 @@ p strong {
 
 }
 .project-container {
+  max-width: 1200px;
+  margin: 3rem auto 0 auto; 
+  padding: 0 1rem;
 }
 
 .project-title {
@@ -162,7 +165,7 @@ p strong {
 }
 
 .indented-list {
-  padding-left: 2rem; /
+  padding-left: 2rem; 
 }
 .floating-back-btn {
   position: fixed;
@@ -201,7 +204,7 @@ footer {
 
 @media (max-width: 600px) {
   footer {
-    padding: 2rem 1rem; /* more space on smaller screens */
+    padding: 2rem 1rem; 
     font-size: 0.85rem;
   }
 }
