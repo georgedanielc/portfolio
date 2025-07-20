@@ -17,7 +17,10 @@ body {
   letter-spacing: 10px;
   font-weight: 300;
 }
-
+p b,
+p strong {
+  font-weight: 700; /* or 600 depending on how bold you want */
+}
 /* Base layout */
 .navbar {
   display: flex;
@@ -76,25 +79,39 @@ body {
 }
 .card {
   background-color: rgba(255, 255, 255, 0.05);
-  border: 1px dashed #ffffff;
   border-radius: 10px;
   text-align: center;
   max-width: 400px;
   background-color: #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+}
+
+.card:hover h2,
+.card:hover p {
+  color: black;
 }
 
 .card img {
   width: 100%;
   max-width: 400px;
   height: 400px;
-  margin: 1rem auto 0 auto;
+  margin: 0 auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 
 }
 
 .card h2 {
   font-size: 1.5rem;
   font-weight: 400;
-  background-color: #000;
   text-align:left;
   color: #fff;
   padding-left: 10px;
@@ -105,10 +122,26 @@ body {
 .card p {
   font-size: 0.95rem;
   line-height: 1.4;
-  background-color: #000;
   text-align:left;
   color: #fff;
   font-weight: 300;
-  padding-left: 10px;
+  padding: 0 10px 10px 10px;
+
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background-color: transparent; 
+  color: #000; 
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  footer {
+    padding: 2rem 1rem; /* more space on smaller screens */
+    font-size: 0.85rem;
+  }
 }
 }
