@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".card");
   const container = document.getElementById("project-container");
+  const mainContent = document.querySelector(".main-content");
 
   let originalContent = container.innerHTML; 
 
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
           container.innerHTML = html + `
             <button id="back-button" class="floating-back-btn">&lt;</button>
           `;
+		  mainContent.style.display = "none";
           attachBackButtonListener();
         })
         .catch((error) => {
@@ -31,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (backButton) {
       backButton.addEventListener("click", function () {
         container.innerHTML = originalContent;
+		mainContent.style.display = "block"; 
         window.dispatchEvent(new Event("DOMContentLoaded"));
       });
     }
