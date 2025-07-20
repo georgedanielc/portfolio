@@ -192,6 +192,9 @@ p strong {
   color: rgba(100, 100, 100, 1);
 }
 
+.hidden {
+  display: none !important;
+}
 
 footer {
   text-align: center;
