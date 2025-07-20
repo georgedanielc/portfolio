@@ -161,6 +161,10 @@ p strong {
   border: 1px solid #ccc;
 }
 
+.indented-list {
+  padding-left: 2rem; /
+}
+
 footer {
   text-align: center;
   padding: 1.5rem 1rem;
