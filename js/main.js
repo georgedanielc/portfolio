@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".card");
-  const container = document.getElementById("main-content");
+  const container = document.querySelector(".main-content");
 
   cards.forEach((card) => {
     card.addEventListener("click", function () {
