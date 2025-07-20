@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".card");
-  const container = document.querySelector(".main-content");
+  const container = document.getElementById("project-container");
+
+  let originalContent = container.innerHTML; 
 
   cards.forEach((card) => {
     card.addEventListener("click", function () {
@@ -12,7 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
           return response.text();
         })
         .then((html) => {
-          container.innerHTML = html;
+          container.innerHTML = html + `
+            <button id="back-button" class="floating-back-btn">&lt;</button>
+          `;
+          attachBackButtonListener();
         })
         .catch((error) => {
           container.innerHTML = "<p>Failed to load project content.</p>";
@@ -20,4 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
   });
+
+  function attachBackButtonListener() {
+    const backButton = document.getElementById("back-button");
+    if (backButton) {
+      backButton.addEventListener("click", function () {
+        container.innerHTML = originalContent;
+        window.dispatchEvent(new Event("DOMContentLoaded"));
+      });
+    }
+  }
 });
