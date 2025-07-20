@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () { 
   const cards = document.querySelectorAll(".card");
   const container = document.getElementById("project-container");
   const mainContent = document.querySelector(".main-content");
@@ -14,9 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
           return response.text();
         })
         .then((html) => {
-          mainContent.style.display = "none";
-          container.style.display = "block";
-
+          mainContent.classList.add("hidden");    
+          container.classList.remove("hidden");   
           container.innerHTML = html + `
             <button id="back-button" class="floating-back-btn">&lt;</button>
           `;
@@ -35,11 +34,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (backButton) {
       backButton.addEventListener("click", function () {
         container.innerHTML = "";
-        container.style.display = "none";
-        mainContent.style.display = "block"; 
+        container.classList.add("hidden");         
+        mainContent.classList.remove("hidden");    
       });
     }
   }
 
-  container.style.display = "none";
+  container.classList.add("hidden");
 });
