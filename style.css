@@ -195,6 +195,15 @@ p strong {
 .hidden {
   display: none !important;
 }
+body.white-theme {
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.navbar.white-theme {
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
 
 footer {
   text-align: center;
