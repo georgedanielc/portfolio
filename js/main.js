@@ -3,11 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("project-container");
   const mainContent = document.querySelector(".main-content");
 
-  let originalContent = container.innerHTML; 
-
   cards.forEach((card) => {
     card.addEventListener("click", function () {
       const url = this.getAttribute("data-project");
+      if (!url) return;
 
       fetch(url)
         .then((response) => {
@@ -15,10 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
           return response.text();
         })
         .then((html) => {
+          mainContent.style.display = "none";
+          container.style.display = "block";
+
           container.innerHTML = html + `
             <button id="back-button" class="floating-back-btn">&lt;</button>
           `;
-		  mainContent.style.display = "none";
+
           attachBackButtonListener();
         })
         .catch((error) => {
@@ -32,10 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const backButton = document.getElementById("back-button");
     if (backButton) {
       backButton.addEventListener("click", function () {
-        container.innerHTML = originalContent;
-		mainContent.style.display = "block"; 
-        window.dispatchEvent(new Event("DOMContentLoaded"));
+        container.innerHTML = "";
+        container.style.display = "none";
+        mainContent.style.display = "block"; 
       });
     }
   }
+
+  container.style.display = "none";
 });
