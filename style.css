@@ -42,6 +42,7 @@ button:hover {
   letter-spacing: 10px;
   font-weight: 300;
 }
+
 p b,
 p strong {
   font-weight: 700; 
@@ -58,7 +59,6 @@ p strong {
   flex-wrap: nowrap;
   gap: 10px;
   border-bottom: 2px dashed #444; 
-  text-shadow: 0 0 2px #000;
 }
 
 .logo {
@@ -113,11 +113,9 @@ p strong {
   cursor: pointer;
   text-decoration: none;
   position: relative;
-  border: 1px solid #00ffcc;
-  color: #00ffcc;
 }
 
-.card h2, .card p {
+.card h2, .card p, project-section {
     text-shadow: 0 0 2px #000;
 }
 .badge {
@@ -137,8 +135,7 @@ p strong {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  background: #00ffcc;
-  
+  background-color: #fff;
 }
 
 .card:hover h2,
@@ -228,305 +225,20 @@ p strong {
   font-size: 24px;
   font-weight: bold;
   color: rgba(100, 100, 100, 0.5);
-  background-color: rgba(100, 100, 100, 0.5);
-  border: none;
+  background-color: transparent;
+  border: 1px solid #00ffcc;
   border-radius: 10%;
   cursor: pointer;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s ease;
-}
-
-.floating-back-btn:hover {
-  background-color: rgba(100, 100, 100, 0.3);
-  color: rgba(100, 100, 100, 1);
-}
-
-.hidden {
-  display: none !important;
-}
-body.white-theme {
-  background-color: #fff;
-  transition: background-color 0.3s ease;
-}
-
-.navbar.white-theme {
-  background-color: #fff;
-  transition: background-color 0.3s ease;
-}
-
-footer {
-  text-align: center;
-  padding: 1.5rem 1rem;
-  background-color: transparent; 
-  color: #000; 
-  font-size: 0.9rem;
-  margin-top: 2rem;
-}
-
-@media (max-width: 600px) {
-  footer {
-    padding: 2rem 1rem; 
-    font-size: 0.85rem;
-  }
-  .floating-back-btn {
-    top: 57px; 
-    left: 20px;
-  }
-  .project-title {
-    font-size: 3rem;
-    min-height: 60px;
-    padding: 0.75rem 0.5rem;
-	justify-content: center;  
-    align-items: center;  
-    text-align: center;
-  }
-}
-}/* Base Styling */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inconsolata', monospace;
-  background-color: #78c2ad;
-  color: #1a1a1a;
-}
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: linear-gradient(
-    rgba(255,255,255,0.03) 50%, 
-    transparent 50%
-  );
-  background-size: 100% 2px;
-  pointer-events: none;
-  z-index: 9999;
-}
-button {
-  background: transparent;
-  border: 1px solid #00ffcc;
-  color: #00ffcc;
-  font-family: 'Courier New', monospace;
-  padding: 8px 16px;
-  box-shadow: 0 0 8px #00ffcc;
   transition: all 0.3s ease;
-}
-button:hover {
-  background: #00ffcc;
-  color: black;
-}
-
-.center-title {
-  font-family: 'Inconsolata', monospace;
-  font-size: 2rem;
-  letter-spacing: 10px;
-  font-weight: 300;
-}
-p b,
-p strong {
-  font-weight: 700; 
-}
-/* Base layout */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #78c2ad;
-  padding: 10px 20px;
-  color: #1a1a1a;
-  font-family: 'Inconsolata', monospace;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-bottom: 2px dashed #444; 
-  text-shadow: 0 0 2px #000;
-}
-
-.logo {
-  height: 40px;
-  flex-shrink: 0;
-}
-
-.email-link {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: white;
-  flex-shrink: 0;
-}
-
-/* Prevent overflow and adjust size on small screens */
-@media (max-width: 600px) {
-  .navbar {
-    padding: 8px 12px;
-  }
-
-  .logo {
-    height: 30px;
-  }
-
-  .center-title {
-  font-family: 'Inconsolata', monospace;
-  font-size: 1.5rem;
-  letter-spacing: 1px;
-  font-weight: 300;
-}
-
-  .email-link {
-    font-size: 1.2rem;
-  }
-}
-
-.main-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 3rem auto 0 auto; 
-  padding: 0 1rem;
-}
-.card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  text-align: center;
-  max-width: 400px;
-  background-color: #000;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-  position: relative;
-  border: 1px solid #00ffcc;
-  color: #00ffcc;
-}
-
-.card h2, .card p {
-    text-shadow: 0 0 2px #000;
-}
-.badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #ff3c38;
-  color: white;
-  font-size: 0.75rem;
-  font-weight: bold;
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-family: 'Inconsolata', monospace;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  background: #00ffcc;
-  
-}
-
-.card:hover h2,
-.card:hover p {
-  color: black;
-}
-
-.card img {
-  width: 100%;
-  max-width: 400px;
-  height: 400px;
-  margin: 0 auto;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  object-fit: contain;
-
-}
-
-.card h2 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  text-align:left;
-  color: #fff;
-  padding-left: 10px;
-  padding-top: 5px;
-  margin-top: -6px;
-}
-
-.card p {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  text-align:left;
-  color: #fff;
-  font-weight: 300;
-  padding: 0 10px 10px 10px;
-
-}
-.project-container {
-  max-width: 1200px;
-  margin: 3rem auto 0 auto; 
-  padding: 0 1rem;
-}
-
-.project-title {
-  font-size: 5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  background-color: #000;
-  color: #fff;
-  display: flex;
-  padding: 1rem;   
-  box-sizing: border-box;
-}
-
-.project-type {
-  font-size: 0.95rem;
-  color: #000;
-  margin-bottom: 2rem;
-}
-
-.project-section {
-  margin-bottom: 2rem;
-}
-
-.project-section h2 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #222;
-}
-
-.project-image {
-  width: 100%;
-  border-radius: 6px;
-  margin: 1rem 0;
-  border: 1px solid #ccc;
-}
-
-.indented-list {
-  padding-left: 2rem; 
-}
-.floating-back-btn {
-  position: fixed;
-  top: 100px;
-  left: 20px;
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
-  font-weight: bold;
-  color: rgba(100, 100, 100, 0.5);
-  background-color: rgba(100, 100, 100, 0.5);
-  border: none;
-  border-radius: 10%;
-  cursor: pointer;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s ease;
+  box-shadow: 0 0 8px #00ffcc;
 }
 
 .floating-back-btn:hover {
-  background-color: rgba(100, 100, 100, 0.3);
+  background: #00ffcc;
   color: rgba(100, 100, 100, 1);
 }
 
