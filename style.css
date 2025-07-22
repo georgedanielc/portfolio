@@ -22,19 +22,7 @@ body::before {
   pointer-events: none;
   z-index: 9999;
 }
-button {
-  background: transparent;
-  border: 1px solid #00ffcc;
-  color: #00ffcc;
-  font-family: 'Courier New', monospace;
-  padding: 8px 16px;
-  box-shadow: 0 0 8px #00ffcc;
-  transition: all 0.3s ease;
-}
-button:hover {
-  background: #00ffcc;
-  color: black;
-}
+
 
 .center-title {
   font-family: 'Inconsolata', monospace;
@@ -225,8 +213,8 @@ p strong {
   font-size: 24px;
   font-weight: bold;
   color: rgba(100, 100, 100, 0.5);
-  background-color: transparent;
-  border: 1px solid #00ffcc;
+  background-color: #fff;
+  border: none;
   border-radius: 10%;
   cursor: pointer;
   z-index: 1000;
@@ -234,12 +222,12 @@ p strong {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  box-shadow: 0 0 8px #00ffcc;
 }
 
 .floating-back-btn:hover {
   background: #00ffcc;
   color: rgba(100, 100, 100, 1);
+  box-shadow: 0 0 8px #00ffcc;
 }
 
 .hidden {
