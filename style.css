@@ -88,6 +88,11 @@ body::before {
 	font-size: 12px;
     line-height: 20px;
 }
+  footer p {
+  font-size: 0.9rem;
+  letter-spacing: normal;
+  line-height: normal;
+}
 
 }
 
