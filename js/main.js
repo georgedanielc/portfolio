@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
   const logo = document.querySelector(".logo");
   const centerTitle = document.querySelector(".center-title");
+  const footer = document.querySelector("footer");
   
 	if (logo) {
 	  logo.addEventListener("click", function () {
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           body.classList.add("white-theme");
           if (navbar) navbar.classList.add("white-theme");
+		  if (footer) footer.classList.add("white-theme");
 
           attachBackButtonListener();
         })
@@ -58,6 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         body.classList.remove("white-theme");
         if (navbar) navbar.classList.remove("white-theme");
+		if (footer) footer.classList.remove("white-theme");
+
       });
     }
   }
@@ -78,6 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         body.classList.add("white-theme");
         if (navbar) navbar.classList.add("white-theme");
+		if (footer) footer.classList.remove("white-theme");
+
 
         attachBackButtonListener();
       })
