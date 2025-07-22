@@ -80,7 +80,7 @@ body::before {
   cursor: pointer;
 }
 
-.about-icon {
+.email-icon {
   padding: 1px;
 }
 
@@ -103,8 +103,8 @@ body::before {
   }
 
   .icon {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
   }
 
   .email-link {
