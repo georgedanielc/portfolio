@@ -4,6 +4,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainContent = document.querySelector(".main-content");
   const navbar = document.querySelector(".navbar");
   const body = document.body;
+  const logo = document.querySelector(".logo");
+  
+	if (logo) {
+	  logo.addEventListener("click", function () {
+		container.innerHTML = "";
+		container.classList.add("hidden");         
+		mainContent.classList.remove("hidden");    
+
+		body.classList.remove("white-theme");
+		if (navbar) navbar.classList.remove("white-theme");
+	  });
+	}
+
 
   cards.forEach((card) => {
     card.addEventListener("click", function () {
