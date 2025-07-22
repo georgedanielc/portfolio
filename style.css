@@ -52,6 +52,7 @@ body::before {
 
 .about-icon {
   padding: 1px; 
+  cursor: pointer;
 }
 
 
