@@ -42,7 +42,7 @@ body::before {
   gap: 12px;
 }
 
-.pixel-icon,
+.about-icon,
 .email-link .logo {
   width: 40px;
   height: 40px;
@@ -50,7 +50,7 @@ body::before {
   object-fit: contain;
 }
 
-.pixel-icon {
+.about-icon {
   padding: 1px; 
 }
 
