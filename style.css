@@ -116,7 +116,7 @@ p strong {
   position: relative;
 }
 
-.card h2, .card p, project-section {
+.card h2, .card p, .project-section {
     text-shadow: 0 0 2px #000;
 }
 .badge {
