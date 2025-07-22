@@ -7,8 +7,36 @@
 
 body {
   font-family: 'Inconsolata', monospace;
+  animation: crt-flicker 1.5s infinite;
   background-color: #78c2ad;
   color: #1a1a1a;
+}
+@keyframes crt-flicker {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.05); }
+}
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0.03) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: scan 0.3s infinite linear;
+  pointer-events: none;
+  z-index: 999;
+}
+
+@keyframes scan {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(2px); }
 }
 
 .center-title {
@@ -32,7 +60,8 @@ p strong {
   font-family: 'Inconsolata', monospace;
   flex-wrap: nowrap;
   gap: 10px;
- border-bottom: 2px dashed #444; 
+  border-bottom: 2px dashed #444; 
+  text-shadow: 0 0 2px #000;
 }
 
 .logo {
@@ -86,6 +115,27 @@ p strong {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   text-decoration: none;
+  position: relative;
+}
+.navbar {
+   
+}
+
+.card h2, .card p {
+    text-shadow: 0 0 2px #000;
+}
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff3c38;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Inconsolata', monospace;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
 }
 
 .card:hover {
