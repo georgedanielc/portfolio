@@ -36,27 +36,8 @@ body::before {
   letter-spacing: 10px;
   font-weight: 700;
 }
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 
-.about-icon,
-.email-link .logo {
-  width: 40px;
-  height: 40px;
-  display: block;
-  object-fit: contain;
-}
-
-.about-icon {
-  padding: 1px; 
-  cursor: pointer;
-}
-
-
-/* Base layout */
+/* Base navbar */
 .navbar {
   display: flex;
   align-items: center;
@@ -65,55 +46,89 @@ body::before {
   padding: 10px 20px;
   color: #1a1a1a;
   font-family: 'Inconsolata', monospace;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-bottom: 1px dashed #444; 
+  border-bottom: 1px dashed #444;
+  position: relative;
 }
 
-.logo {
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  min-width: 100px; 
+  gap: 12px;
+}
+
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.center-title {
+  margin: 0;
+  font-size: 2rem;
+  color: #000;
+  white-space: nowrap;
+}
+
+
+.icon {
+  width: 40px;
   height: 40px;
-  flex-shrink: 0;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.about-icon {
+  padding: 1px;
 }
 
 .email-link {
   font-size: 1.5rem;
   text-decoration: none;
   color: white;
-  flex-shrink: 0;
 }
 
-/* Prevent overflow and adjust size on small screens */
+/* Responsive: Mobile adjustments */
 @media (max-width: 600px) {
   .navbar {
     padding: 8px 12px;
   }
 
-  .logo {
-    height: 30px;
+  .center-title {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    font-weight: 700;
   }
 
-  .center-title {
-  font-family: 'Inconsolata', monospace;
-  font-size: 1.5rem;
-  letter-spacing: 5px;
-  font-weight: 700;
-}
+  .icon {
+    width: 35px;
+    height: 35px;
+  }
 
   .email-link {
     font-size: 1.2rem;
   }
+
   p {
-    letter-spacing: 1px;
-	font-size: 12px;
+    font-size: 12px;
     line-height: 20px;
-}
+    letter-spacing: 1px;
+  }
+
   footer p {
-  font-size: 0.9rem;
-  letter-spacing: normal;
-  line-height: normal;
+    font-size: 0.9rem;
+    letter-spacing: normal;
+    line-height: normal;
+  }
+  .navbar-left,
+  .navbar-right {
+    min-width: auto; 
+    gap: 8px;        
+  }
 }
 
-}
 
 .main-content {
   display: grid;
