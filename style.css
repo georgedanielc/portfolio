@@ -34,7 +34,7 @@ body::before {
   font-family: 'Inconsolata', monospace;
   font-size: 2rem;
   letter-spacing: 10px;
-  font-weight: 300;
+  font-weight: 700;
 }
 
 p b,
@@ -96,7 +96,7 @@ p strong {
   max-width: 1200px;
   margin: 3rem auto 0 auto; 
   padding: 0 1rem;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 .card {
   background-color: rgba(255, 255, 255, 0.05);
@@ -172,6 +172,7 @@ p strong {
   max-width: 1200px;
   margin: 3rem auto 0 auto; 
   padding: 0 1rem;
+  padding-bottom: 100px;
 }
 
 .project-title {
