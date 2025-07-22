@@ -37,10 +37,6 @@ body::before {
   font-weight: 700;
 }
 
-p b,
-p strong {
-  font-weight: 700; 
-}
 /* Base layout */
 .navbar {
   display: flex;
@@ -52,7 +48,7 @@ p strong {
   font-family: 'Inconsolata', monospace;
   flex-wrap: nowrap;
   gap: 10px;
-  border-bottom: 2px dashed #444; 
+  border-bottom: 1px dashed #444; 
 }
 
 .logo {
@@ -98,6 +94,16 @@ p strong {
   padding: 0 1rem;
   padding-bottom: 100px;
 }
+
+p {
+    letter-spacing: 1px;
+}
+
+p b,
+p strong {
+  font-weight: 700; 
+}
+
 .card {
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
@@ -166,6 +172,7 @@ p strong {
   color: #fff;
   font-weight: 300;
   padding: 0 10px 10px 10px;
+  letter-spacing: 1px;
 
 }
 .project-container {
@@ -200,6 +207,7 @@ p strong {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: #222;
+  letter-spacing: 1px;
 }
 
 .project-image {
@@ -259,9 +267,10 @@ footer {
   padding: 1.5rem 1rem;
   background-color: #78c2ad;
   color: #000;
-  font-size: 0.9rem;
-  border-top: 1px dashed #000;
+  font-size: 1rem;
+  border-top: 1px dashed #444;
   z-index: 100;
+  letter-spacing: 5px;
 }
 
 body.white-theme footer {
