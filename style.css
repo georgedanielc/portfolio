@@ -108,6 +108,7 @@ body::before {
 
 p {
     letter-spacing: 1px;
+	line-height: 20px;
 }
 
 p b,
