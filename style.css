@@ -83,6 +83,12 @@ body::before {
   .email-link {
     font-size: 1.2rem;
   }
+  p {
+    letter-spacing: 1px;
+	font-size: 12px;
+    line-height: 20px;
+}
+
 }
 
 .main-content {
@@ -97,8 +103,6 @@ body::before {
 
 p {
     letter-spacing: 1px;
-	font-size: 12px;
-    line-height: 20px;
 }
 
 p b,
