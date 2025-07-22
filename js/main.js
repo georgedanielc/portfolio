@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector(".navbar");
   const body = document.body;
   const logo = document.querySelector(".logo");
+  const centerTitle = document.querySelector(".center-title");
   
 	if (logo) {
 	  logo.addEventListener("click", function () {
@@ -60,6 +61,34 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
+  
+  if (centerTitle) {
+  centerTitle.addEventListener("click", function () {
+    fetch("about.html")
+      .then((response) => {
+        if (!response.ok) throw new Error("Network error");
+        return response.text();
+      })
+      .then((html) => {
+        mainContent.classList.add("hidden");
+        container.classList.remove("hidden");
+        container.innerHTML = html + `
+          <button id="back-button" class="floating-back-btn">&lt;</button>
+        `;
+
+        body.classList.add("white-theme");
+        if (navbar) navbar.classList.add("white-theme");
+
+        attachBackButtonListener();
+      })
+      .catch((error) => {
+        container.innerHTML = "<p>Failed to load About Me.</p>";
+        console.error(error);
+      });
+  });
+}
 
   container.classList.add("hidden");
+  
+  
 });
