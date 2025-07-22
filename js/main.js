@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector(".navbar");
   const body = document.body;
   const logo = document.querySelector(".logo");
-  const centerTitle = document.querySelector(".center-title");
+  const about = document.querySelector(".about-icon");
   const footer = document.querySelector("footer");
   
 	if (logo) {
@@ -66,14 +66,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   
-  if (centerTitle) {
-  centerTitle.addEventListener("click", function () {
+  if (about) {
+  about.addEventListener("click", function () {
     fetch("about.html")
       .then((response) => {
         if (!response.ok) throw new Error("Network error");
         return response.text();
       })
-      .then((html) => {
+      // .then((html) => {
         mainContent.classList.add("hidden");
         container.classList.remove("hidden");
         container.innerHTML = html + `
