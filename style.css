@@ -263,6 +263,11 @@ footer {
   z-index: 100;
 }
 
+body.white-theme footer {
+  background-color: #fff;
+  color: #000;
+  border-top: 1px dashed #aaa;
+}
 
 @media (max-width: 600px) {
   footer {
