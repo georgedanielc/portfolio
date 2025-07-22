@@ -66,14 +66,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   
-  if (about) {
+ if (about) {
   about.addEventListener("click", function () {
     fetch("about.html")
       .then((response) => {
         if (!response.ok) throw new Error("Network error");
         return response.text();
       })
-      // .then((html) => {
+      .then((html) => {
         mainContent.classList.add("hidden");
         container.classList.remove("hidden");
         container.innerHTML = html + `
@@ -82,8 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         body.classList.add("white-theme");
         if (navbar) navbar.classList.add("white-theme");
-		if (footer) footer.classList.remove("white-theme");
-
+        if (footer) footer.classList.remove("white-theme");
 
         attachBackButtonListener();
       })
