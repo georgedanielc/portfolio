@@ -96,6 +96,7 @@ p strong {
   max-width: 1200px;
   margin: 3rem auto 0 auto; 
   padding: 0 1rem;
+  padding-bottom: 50px;
 }
 .card {
   background-color: rgba(255, 255, 255, 0.05);
@@ -249,18 +250,24 @@ body.white-theme {
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
   padding: 1.5rem 1rem;
-  background-color: transparent; 
-  color: #000; 
+  background-color: #78c2ad;
+  color: #000;
   font-size: 0.9rem;
-  margin-top: 2rem;
+  border-top: 1px dashed #000;
+  z-index: 100;
 }
+
 
 @media (max-width: 600px) {
   footer {
-    padding: 2rem 1rem; 
-    font-size: 0.85rem;
+    padding: 1rem 1rem; 
+    font-size: 1rem;
   }
   .floating-back-btn {
     top: 57px; 
