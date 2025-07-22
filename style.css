@@ -23,6 +23,12 @@ body::before {
   z-index: 9999;
 }
 
+.about-content{
+  max-width: 1200px;
+  margin: 3rem auto 0 auto; 
+  padding: 0 1rem;
+}
+
 
 .center-title {
   font-family: 'Inconsolata', monospace;
@@ -161,14 +167,6 @@ p strong {
   padding: 0 10px 10px 10px;
 
 }
-
-
-.about-content{
-  max-width: 1200px;
-  margin: 3rem auto 0 auto; 
-  padding: 0 1rem;
-}
-
 .project-container {
   max-width: 1200px;
   margin: 3rem auto 0 auto; 
@@ -221,7 +219,7 @@ p strong {
   font-size: 24px;
   font-weight: bold;
   color: rgba(100, 100, 100, 0.5);
-  background-color: #fff;
+  background-color: rgba(100, 100, 100, 0.5);
   border: none;
   border-radius: 10%;
   cursor: pointer;
@@ -229,13 +227,12 @@ p strong {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
 .floating-back-btn:hover {
-  background: #00ffcc;
+  background-color: rgba(100, 100, 100, 0.3);
   color: rgba(100, 100, 100, 1);
-  box-shadow: 0 0 8px #00ffcc;
 }
 
 .hidden {
