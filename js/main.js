@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			modal.addEventListener("click", (e) => {
 			  if (e.target === modal) modal.classList.remove("show");
 			});
-
+		  }
 		  attachBackButtonListener();
 		})
 
