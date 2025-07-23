@@ -391,7 +391,12 @@ body.white-theme footer {
 }
 
 /* Modal Styling */
+
+.modal:not(.hidden) {
+  display: block;
+}
 .modal {
+	display: none;
   position: fixed;
   top: 0;
   left: 0;
