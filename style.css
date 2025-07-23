@@ -388,6 +388,7 @@ body.white-theme footer {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-family: 'Inconsolata', monospace;
 }
 
 #contact-form button:hover {
@@ -401,13 +402,13 @@ body.white-theme footer {
 }
 
 .modal {
-	display: none; /* hidden initially */
+	display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* dim background */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -941,7 +942,11 @@ body.white-theme footer {
     transform: translateY(100%);
     transition: transform 0.3s ease-in-out;
   }
-
+  .modal-content button {
+	  padding-bottom: 20px;
+  }
+  
+		
   .modal.show .modal-content {
     transform: translateY(0);
   }
