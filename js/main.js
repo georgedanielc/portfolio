@@ -120,6 +120,39 @@ document.addEventListener("DOMContentLoaded", function () {
         body.classList.add("white-theme");
         navbar?.classList.add("white-theme");
         footer?.classList.add("white-theme");
+
+        // ✅ Now that form is in DOM, bind event listeners
+        const form = document.getElementById("contact-form");
+        const modal = document.getElementById("success-modal");
+        const closeBtn = document.getElementById("modal-close-button");
+
+        if (form && modal && closeBtn) {
+          // Hide modal initially
+          modal.classList.add("hidden");
+
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+              method: "POST",
+              body: formData,
+            })
+            .then(() => {
+              modal.classList.remove("hidden");
+              form.reset();
+            })
+            .catch(() => {
+              alert("Oops! Something went wrong.");
+            });
+          });
+
+          closeBtn.addEventListener("click", function () {
+            container.classList.add("hidden");
+            mainContent.classList.remove("hidden");
+          });
+        }
       })
       .catch(err => {
         container.innerHTML = "<p>Failed to load page.</p>";
@@ -128,28 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 }
 
-	 form.addEventListener("submit", function (e) {
-    e.preventDefault(); // prevent default submission
-
-    // Create FormData and send manually using fetch
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
-    })
-    .then(() => {
-      modal.classList.remove("hidden");
-      form.reset();
-    })
-    .catch((error) => {
-      alert("Oops! Something went wrong.");
-    });
-  });
-
-  goHomeBtn.addEventListener("click", function () {
-    window.location.href = "index.html";
-  });
   container.classList.add("hidden");
   
   
