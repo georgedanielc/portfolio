@@ -7,17 +7,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const logo = document.querySelector(".logo");
   const about = document.querySelector(".about-icon");
   const footer = document.querySelector("footer");
+  const title = document.querySelector(".center-title");
   
-	if (logo) {
-	  logo.addEventListener("click", function () {
-		container.innerHTML = "";
-		container.classList.add("hidden");         
-		mainContent.classList.remove("hidden");    
+	function goHome() {
+    container.innerHTML = "";
+    container.classList.add("hidden");
+    mainContent.classList.remove("hidden");
 
-		body.classList.remove("white-theme");
-		if (navbar) navbar.classList.remove("white-theme");
-	  });
-	}
+    body.classList.remove("white-theme");
+    if (navbar) navbar.classList.remove("white-theme");
+    if (footer) footer.classList.remove("white-theme");
+  }
+
+  if (logo) {
+    logo.addEventListener("click", goHome);
+  }
+
+  if (title) {
+    title.addEventListener("click", goHome);
+    title.style.cursor = "pointer"; // Optional: shows it's clickable
+  }
 
 
   cards.forEach((card) => {
