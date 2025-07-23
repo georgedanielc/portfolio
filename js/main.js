@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contact-form");
   const modal = document.getElementById("success-modal");
   const goHomeBtn = document.getElementById("go-home-btn");
+  const modalCloseBtn = document.getElementById("modal-close-button");
   
 	function goHome() {
     container.innerHTML = "";
@@ -131,22 +132,23 @@ document.addEventListener("DOMContentLoaded", function () {
           modal.classList.add("hidden");
 
           form.addEventListener("submit", function (e) {
-            e.preventDefault();
+		  e.preventDefault(); // prevent default submission
 
-            const formData = new FormData(form);
+		  const formData = new FormData(form);
 
-            fetch(form.action, {
-              method: "POST",
-              body: formData,
-            })
-            .then(() => {
-              modal.classList.remove("hidden");
-              form.reset();
-            })
-            .catch(() => {
-              alert("Oops! Something went wrong.");
-            });
-          });
+		  fetch(form.action, {
+			method: "POST",
+			body: formData,
+		  })
+			.then(() => {
+			  modal.classList.add("show");  // show modal
+			  form.reset();
+			})
+			.catch((error) => {
+			  alert("Oops! Something went wrong.");
+			});
+		});
+
 
           closeBtn.addEventListener("click", function () {
             container.classList.add("hidden");
@@ -160,6 +162,10 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 }
+modalCloseBtn.addEventListener("click", function () {
+  document.body.style.backgroundColor = "#78c2ad";
+  window.location.href = "index.html";
+});
 
   container.classList.add("hidden");
   
