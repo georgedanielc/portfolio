@@ -30,13 +30,6 @@ body::before {
 }
 
 
-.center-title {
-  font-family: 'Inconsolata', monospace;
-  font-size: 2rem;
-  letter-spacing: 10px;
-  font-weight: 700;
-}
-
 /* Base navbar */
 .navbar {
   display: flex;
@@ -66,10 +59,10 @@ body::before {
 }
 
 .center-title {
-  margin: 0;
-  font-size: 2rem;
-  color: #000;
-  white-space: nowrap;
+  font-family: 'VT323', monospace;
+  font-size: 3rem;
+  letter-spacing: 10px;
+  font-weight: 300;
 }
 
 
@@ -313,7 +306,11 @@ footer {
   font-size: 1rem;
   border-top: 1px dashed #444;
   z-index: 100;
-  letter-spacing: 5px;
+  letter-spacing: 10px;
+  font-family: 'VT323', monospace;
+}
+footer p{
+	 letter-spacing: 5px;
 }
 
 body.white-theme footer {
