@@ -76,13 +76,20 @@ document.addEventListener("DOMContentLoaded", function () {
 			});
 
 			closeBtn.addEventListener("click", () => {
+			  container.innerHTML = ""; 
+			  container.classList.add("hidden"); 
+			  mainContent.classList.remove("hidden"); 
+
+			  body.classList.remove("white-theme");
+			  if (navbar) navbar.classList.remove("white-theme");
+			  if (footer) footer.classList.remove("white-theme");
+
 			  modal.classList.remove("show");
 			});
 
 			modal.addEventListener("click", (e) => {
 			  if (e.target === modal) modal.classList.remove("show");
 			});
-		  }
 
 		  attachBackButtonListener();
 		})
@@ -179,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 
-		  closeBtn.addEventListener("click", function () {
+	  closeBtn.addEventListener("click", function () {
 	  container.innerHTML = ""; 
 	  container.classList.add("hidden"); 
 	  mainContent.classList.remove("hidden"); 
