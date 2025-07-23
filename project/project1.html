@@ -73,4 +73,28 @@
       It reminded me that strong visual identity doesn't need to sacrifice clarity or function.
     </p>
   </div>
+    <section class="contact-section project-contact">
+  <h2 class="contact-title">Get in Touch</h2>
+  <p class="contact-subtitle">I'd love to hear from you! Send a message below:</p>
+
+  <form id="contact-form" action="https://formsubmit.co/9691f5894377b2027349ad6c6754e904" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" required></textarea>
+
+    <input type="text" name="_honey" style="display:none" />
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_redirect" value="false" />
+
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<div id="success-modal" class="modal">
+  <div class="modal-content">
+    <h2>Thank You!</h2>
+    <p>Your message has been sent successfully.</p>
+    <button id="modal-close-button">Back to Home</button>
+  </div>
+</div>
 </div>
