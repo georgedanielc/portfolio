@@ -83,7 +83,6 @@ body::before {
   color: white;
 }
 
-/* Responsive: Mobile adjustments */
 @media (max-width: 600px) {
   .navbar {
     padding: 8px 12px;
@@ -336,4 +335,11 @@ body.white-theme footer {
     align-items: center;  
     text-align: center;
   }
+  .indented-list {
+    padding-left: 1.5rem; 
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 1px;
+  
+}
 }
