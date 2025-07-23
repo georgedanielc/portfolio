@@ -151,10 +151,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
       closeBtn.addEventListener("click", function () {
-        container.classList.add("hidden");
-        mainContent.classList.remove("hidden");
-        document.body.style.backgroundColor = "#78c2ad";
-      });
+  container.innerHTML = ""; // clear contact page
+  container.classList.add("hidden"); // hide container
+  mainContent.classList.remove("hidden"); // show main content
+
+  // ✅ Remove white-theme classes like back button
+  body.classList.remove("white-theme");
+  if (navbar) navbar.classList.remove("white-theme");
+  if (footer) footer.classList.remove("white-theme");
+
+  modal.classList.remove("show"); // hide modal
+});
     } else {
       console.warn("Modal, form or closeBtn not found");
     }
