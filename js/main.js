@@ -45,18 +45,48 @@ document.addEventListener("DOMContentLoaded", function () {
           return response.text();
         })
         .then((html) => {
-          mainContent.classList.add("hidden");    
-          container.classList.remove("hidden");   
-          container.innerHTML = html + `
-            <button id="back-button" class="floating-back-btn">&lt;</button>
-          `;
+		  mainContent.classList.add("hidden");    
+		  container.classList.remove("hidden");   
+		  container.innerHTML = html + `
+			<button id="back-button" class="floating-back-btn">&lt;</button>
+		  `;
 
-          body.classList.add("white-theme");
-          if (navbar) navbar.classList.add("white-theme");
+		  body.classList.add("white-theme");
+		  if (navbar) navbar.classList.add("white-theme");
 		  if (footer) footer.classList.add("white-theme");
+		  
+		  const form = document.getElementById("contact-form");
+		  const modal = document.getElementById("success-modal");
+		  const closeBtn = document.getElementById("modal-close-button");
 
-          attachBackButtonListener();
-        })
+		  if (form && modal && closeBtn) {
+			modal.classList.add("hidden");
+
+			form.addEventListener("submit", (e) => {
+			  e.preventDefault();
+			  const formData = new FormData(form);
+
+			  fetch(form.action, { method: "POST", body: formData })
+				.then(() => {
+				  modal.classList.remove("hidden");
+				  modal.classList.add("show");
+				  form.reset();
+				})
+				.catch(() => alert("Oops! Something went wrong."));
+			});
+
+			closeBtn.addEventListener("click", () => {
+			  modal.classList.remove("show");
+			});
+
+			modal.addEventListener("click", (e) => {
+			  if (e.target === modal) modal.classList.remove("show");
+			});
+		  }
+
+		  attachBackButtonListener();
+		})
+
         .catch((error) => {
           container.innerHTML = "<p>Failed to load project content.</p>";
           console.error(error);
@@ -178,37 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 }
 
-if (form) {
-    console.log("Form found");
 
-    form.addEventListener("submit", (e) => {
-      e.preventDefault(); // ✅ Stops redirect
-
-      const formData = new FormData(form);
-
-      fetch(form.action, {
-        method: "POST",
-        body: formData,
-      })
-        .then(() => {
-          console.log("Form submitted via fetch");
-          if (modal) modal.classList.add("show");
-          form.reset();
-        })
-        .catch(() => alert("Oops! Something went wrong."));
-    });
-  }
-
-  if (modal && closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      modal.classList.remove("show");
-    });
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) modal.classList.remove("show");
-    });
-  }
-});
 
   container.classList.add("hidden");
   
