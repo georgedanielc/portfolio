@@ -151,9 +151,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
           closeBtn.addEventListener("click", function () {
-            container.classList.add("hidden");
-            mainContent.classList.remove("hidden");
-          });
+  container.classList.add("hidden");
+  mainContent.classList.remove("hidden");
+  document.body.style.backgroundColor = "#78c2ad";
+});
+
         }
       })
       .catch(err => {
@@ -162,10 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 }
-modalCloseBtn.addEventListener("click", function () {
-  document.body.style.backgroundColor = "#78c2ad";
-  window.location.href = "index.html";
-});
 
   container.classList.add("hidden");
   
