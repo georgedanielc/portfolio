@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (title) {
     title.addEventListener("click", goHome);
-    title.style.cursor = "pointer"; // Optional: shows it's clickable
+    title.style.cursor = "pointer";
   }
 
 
