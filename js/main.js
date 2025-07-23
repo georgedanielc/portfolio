@@ -178,10 +178,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 }
 
-if (form && modal && closeBtn) {
-    // Intercept form submission
+if (form) {
+    console.log("Form found");
+
     form.addEventListener("submit", (e) => {
-      e.preventDefault(); // Stop default redirect
+      e.preventDefault(); // ✅ Stops redirect
 
       const formData = new FormData(form);
 
@@ -190,22 +191,24 @@ if (form && modal && closeBtn) {
         body: formData,
       })
         .then(() => {
-          modal.classList.add("show");
+          console.log("Form submitted via fetch");
+          if (modal) modal.classList.add("show");
           form.reset();
         })
         .catch(() => alert("Oops! Something went wrong."));
     });
+  }
 
-    // Close modal on button click
+  if (modal && closeBtn) {
     closeBtn.addEventListener("click", () => {
       modal.classList.remove("show");
     });
 
-    // Close modal on outside click
     modal.addEventListener("click", (e) => {
       if (e.target === modal) modal.classList.remove("show");
     });
   }
+});
 
   container.classList.add("hidden");
   
