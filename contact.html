@@ -1,0 +1,22 @@
+<form id="contact-form" action="https://formsubmit.co/georgedanielcavas@gmail.com" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" placeholder="Your Message" required></textarea>
+
+  <!-- honeypot field -->
+  <input type="text" name="_honey" style="display:none">
+
+  <!-- disable CAPTCHA -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <button type="submit">Send</button>
+</form>
+
+<!-- Modal -->
+<div id="success-modal" class="modal hidden">
+  <div class="modal-content">
+    <img src="assets/email.svg" alt="Email Icon" class="icon email-icon" />
+    <p>Message sent successfully!</p>
+    <button id="go-home-btn">Go back home</button>
+  </div>
+</div>
