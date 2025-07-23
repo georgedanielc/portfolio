@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const about = document.querySelector(".about-icon");
   const footer = document.querySelector("footer");
   const title = document.querySelector(".center-title");
+  const emailIcon = document.querySelector(".email-icon");
+  const form = document.getElementById("contact-form");
+  const modal = document.getElementById("success-modal");
+  const goHomeBtn = document.getElementById("go-home-btn");
   
 	function goHome() {
     container.innerHTML = "";
@@ -101,7 +105,51 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 }
+  if (emailIcon) {
+  emailIcon.addEventListener("click", function () {
+    fetch("contact.html")
+      .then(res => {
+        if (!res.ok) throw new Error("Failed to load page");
+        return res.text();
+      })
+      .then(html => {
+        mainContent.classList.add("hidden");
+        container.classList.remove("hidden");
+        container.innerHTML = html + `<button id="back-button" class="floating-back-btn">&lt;</button>`;
+        attachBackButtonListener();
+        body.classList.add("white-theme");
+        navbar?.classList.add("white-theme");
+        footer?.classList.add("white-theme");
+      })
+      .catch(err => {
+        container.innerHTML = "<p>Failed to load page.</p>";
+        console.error(err);
+      });
+  });
+}
 
+	 form.addEventListener("submit", function (e) {
+    e.preventDefault(); // prevent default submission
+
+    // Create FormData and send manually using fetch
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+    })
+    .then(() => {
+      modal.classList.remove("hidden");
+      form.reset();
+    })
+    .catch((error) => {
+      alert("Oops! Something went wrong.");
+    });
+  });
+
+  goHomeBtn.addEventListener("click", function () {
+    window.location.href = "index.html";
+  });
   container.classList.add("hidden");
   
   
