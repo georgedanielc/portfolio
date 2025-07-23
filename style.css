@@ -393,8 +393,9 @@ body.white-theme footer {
 /* Modal Styling */
 
 .modal.show {
-  display: flex;
+  display: block;
 }
+
 .modal {
 	display: none; /* hidden initially */
   position: fixed;
