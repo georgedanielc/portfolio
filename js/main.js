@@ -114,50 +114,51 @@ document.addEventListener("DOMContentLoaded", function () {
         return res.text();
       })
       .then(html => {
-        mainContent.classList.add("hidden");
-        container.classList.remove("hidden");
-        container.innerHTML = html + `<button id="back-button" class="floating-back-btn">&lt;</button>`;
-        attachBackButtonListener();
-        body.classList.add("white-theme");
-        navbar?.classList.add("white-theme");
-        footer?.classList.add("white-theme");
+  mainContent.classList.add("hidden");
+  container.classList.remove("hidden");
+  container.innerHTML = html + `<button id="back-button" class="floating-back-btn">&lt;</button>`;
+  attachBackButtonListener();
+  body.classList.add("white-theme");
+  navbar?.classList.add("white-theme");
+  footer?.classList.add("white-theme");
 
-        // ✅ Now that form is in DOM, bind event listeners
-        const form = document.getElementById("contact-form");
-        const modal = document.getElementById("success-modal");
-        const closeBtn = document.getElementById("modal-close-button");
+  // ✅ Wait for DOM to update
+  setTimeout(() => {
+    const form = document.getElementById("contact-form");
+    const modal = document.getElementById("success-modal");
+    const closeBtn = document.getElementById("modal-close-button");
 
-        if (form && modal && closeBtn) {
-          // Hide modal initially
-          modal.classList.add("hidden");
+    if (form && modal && closeBtn) {
+      modal.classList.add("hidden"); // ensure hidden
 
-          form.addEventListener("submit", function (e) {
-		  e.preventDefault(); // prevent default submission
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-		  const formData = new FormData(form);
+        const formData = new FormData(form);
 
-		  fetch(form.action, {
-			method: "POST",
-			body: formData,
-		  })
-			.then(() => {
-			  modal.classList.add("show");  // show modal
-			  form.reset();
-			})
-			.catch((error) => {
-			  alert("Oops! Something went wrong.");
-			});
-		});
+        fetch(form.action, {
+          method: "POST",
+          body: formData,
+        })
+          .then(() => {
+            modal.classList.add("show");
+            form.reset();
+          })
+          .catch(() => {
+            alert("Oops! Something went wrong.");
+          });
+      });
 
-
-          closeBtn.addEventListener("click", function () {
-  container.classList.add("hidden");
-  mainContent.classList.remove("hidden");
-  document.body.style.backgroundColor = "#78c2ad";
-});
-
-        }
-      })
+      closeBtn.addEventListener("click", function () {
+        container.classList.add("hidden");
+        mainContent.classList.remove("hidden");
+        document.body.style.backgroundColor = "#78c2ad";
+      });
+    } else {
+      console.warn("Modal, form or closeBtn not found");
+    }
+  }, 0); // ← delays to next render cycle
+})
       .catch(err => {
         container.innerHTML = "<p>Failed to load page.</p>";
         console.error(err);
