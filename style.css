@@ -444,7 +444,31 @@ body.white-theme footer {
 .modal-content button:hover {
   background-color: #333;
 }
+@media (max-width: 600px) {
+  #contact-form {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #fff; /* White background so it stands out */
+    padding: 1rem;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    z-index: 2000;
+    overflow-y: auto;
+    max-height: 80vh; /* prevent it from taking whole screen */
+  }
 
+  .contact-section {
+    padding-bottom: 120px; /* add space for fixed form */
+  }
+
+  body.white-theme {
+    background-color: #fff; /* Keeps consistency */
+  }
+}
 .hidden {
   display: none;
 }
