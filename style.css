@@ -393,7 +393,7 @@ body.white-theme footer {
 /* Modal Styling */
 
 .modal.show {
-  display: block;
+  display: flex;
 }
 
 .modal {
