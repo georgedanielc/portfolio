@@ -178,6 +178,35 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 }
 
+if (form && modal && closeBtn) {
+    // Intercept form submission
+    form.addEventListener("submit", (e) => {
+      e.preventDefault(); // Stop default redirect
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+      })
+        .then(() => {
+          modal.classList.add("show");
+          form.reset();
+        })
+        .catch(() => alert("Oops! Something went wrong."));
+    });
+
+    // Close modal on button click
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("show");
+    });
+
+    // Close modal on outside click
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.classList.remove("show");
+    });
+  }
+
   container.classList.add("hidden");
   
   
