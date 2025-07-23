@@ -132,22 +132,23 @@ document.addEventListener("DOMContentLoaded", function () {
       modal.classList.add("hidden"); // ensure hidden
 
       form.addEventListener("submit", function (e) {
-        e.preventDefault();
+  e.preventDefault();
 
-        const formData = new FormData(form);
+  const formData = new FormData(form);
 
-        fetch(form.action, {
-          method: "POST",
-          body: formData,
-        })
-          .then(() => {
-            modal.classList.add("show");
-            form.reset();
-          })
-          .catch(() => {
-            alert("Oops! Something went wrong.");
-          });
-      });
+  fetch(form.action, {
+    method: "POST",
+    body: formData,
+  })
+    .then(() => {
+      modal.classList.remove("hidden"); // remove hidden
+      modal.classList.add("show");      // add show
+      form.reset();
+    })
+    .catch(() => {
+      alert("Oops! Something went wrong.");
+    });
+});
 
       closeBtn.addEventListener("click", function () {
         container.classList.add("hidden");
