@@ -843,6 +843,21 @@ body.white-theme footer {
   background-color: #333;
 }
 
+.project-contact {
+  text-align: left;
+  padding-left: 0; 
+}
+
+.project-contact #contact-form {
+  margin: 0; /
+  max-width: 400px; 
+}
+
+.project-contact h2,
+.project-contact p {
+  text-align: left;
+}
+
 /* Modal Styling */
 
 .modal.show {
@@ -897,7 +912,7 @@ body.white-theme footer {
 }
 @media (max-width: 600px) {
 	
-    #contact-form {
+	#contact-form {
     width: 90%;
     margin: 0 auto;
     padding: 1rem 0;
