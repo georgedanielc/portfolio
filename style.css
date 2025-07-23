@@ -850,13 +850,13 @@ body.white-theme footer {
 }
 
 .modal {
-	display: none; /* hidden initially */
+  display: none; 
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* dim background */
+  background-color: rgba(0, 0, 0, 0.5); 
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -897,11 +897,11 @@ body.white-theme footer {
 }
 @media (max-width: 600px) {
 	
-	#contact-form {
+    #contact-form {
     width: 90%;
     margin: 0 auto;
     padding: 1rem 0;
-    gap: 0.8rem; /* reduce gap */
+    gap: 0.8rem; 
   }
 
   #contact-form input,
